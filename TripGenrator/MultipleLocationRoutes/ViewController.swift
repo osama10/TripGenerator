@@ -70,13 +70,13 @@ class ViewController: UIViewController {
     
     func drawPath(currentLocation : Location , destinationLoc : Location)
     {
-        _ = "\(currentLocation.lat),\(currentLocation.lng)"
-        _ = "\(destinationLoc.lat),\(destinationLoc.lng)"
+        let origin = "\(currentLocation.lat),\(currentLocation.lng)"
+        let destination = "\(destinationLoc.lat),\(destinationLoc.lng)"
         
         
-        //        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(map_key)"
-        //
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(currentLocation.name)&destination=\(destinationLoc.name)&mode=driving&key=\(map_key)"
+            let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(map_key)"
+      
+      //  let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(currentLocation.name)&destination=\(destinationLoc.name)&mode=driving&key=\(map_key)"
         
         
         Alamofire.request(url).responseJSON { response in
